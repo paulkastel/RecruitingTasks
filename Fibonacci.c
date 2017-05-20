@@ -42,11 +42,17 @@ int main(int argc, char *argv[])
 	int input=0;
 	printf("Wprowadz numer ciagu (mniej niz 48): ");
 	scanf_s("%d", &input);
-
-	count = fibonacci_rec(input);
-	printf("Wynik uzyskany rekurencyjnie: %d\n", count);
-	count = fibonacci_norm(input);
-	printf("Wynik uzyskany normalnie: %d\n", count);
+	if (input > 0)
+	{
+		count = fibonacci_rec(input);
+		printf("Wynik uzyskany rekurencyjnie: %d\n", count);
+		count = fibonacci_norm(input);
+		printf("Wynik uzyskany normalnie: %d\n", count);
+	}
+	else
+	{
+		printf("Podana liczba jest ujemna!");
+	}
 
 	getchar();
 	getchar();
